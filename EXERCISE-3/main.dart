@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:w7_lab/EXERCISE-3/ui/screens/temperature_screen.dart';
 
 import 'ui/screens/welcome_screen.dart';
  
@@ -13,13 +12,7 @@ class TemperatureApp extends StatefulWidget {
 }
 
 class _TemperatureAppState extends State<TemperatureApp> {
-  bool active = false;
-
-  void handleButtonIsClicked(bool newValue){
-    setState(() {
-      active = newValue;
-    });
-  }
+  
   @override
   Widget build(context) {
 
@@ -36,9 +29,7 @@ class _TemperatureAppState extends State<TemperatureApp> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: active ? TemperatureScreen()
-          : WelcomeScreen(active: active, onChanged: handleButtonIsClicked,),
-          
+          child: const WelcomeScreen(),
         ),
       ),
     );

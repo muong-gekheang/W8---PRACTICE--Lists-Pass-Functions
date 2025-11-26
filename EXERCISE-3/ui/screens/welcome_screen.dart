@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  final bool active;
-  final ValueChanged<bool> onChanged;
-  const WelcomeScreen({super.key, this.active = false, required this.onChanged});
+  const WelcomeScreen({super.key});
 
-  void handleTap(){
-    onChanged(!active);
-  }
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -31,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         OutlinedButton(
-          onPressed: handleTap,
+          onPressed: null,
           style: OutlinedButton.styleFrom(
               side: const BorderSide(width: 1.0, color: Colors.white)),
           child: const Text('Start to convert',
